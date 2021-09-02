@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.login {
+  height: 100vh;
+  background-image: linear-gradient(120deg, #360033, #0b8793);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer{
+  min-height: 400px;
+  width: 300px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 3px 13px black;
+  opacity: 90%;
+}
+
+.loginTitle{
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  color: rgba(0, 0, 0, 0.712);
+  opacity: 0;
+  animation: moveItems .5s forwards;
+}
+
+.loginForm{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputEmail, .inputPassword{
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: unset;
+  padding-left: 8px;
+  outline: none;
+  opacity: 0;
+  animation: moveItems .7s forwards;
+}
+
+.loginInputBorder{
+  height: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #cfcfcf;
+  transition: .3s ease-in-out;
+  opacity: 0;
+  animation: moveItems .7s forwards;
+}
+
+
+
+.loginSubmit{
+  height: 48px;
+  width: 100%;
+  padding-left: 8px;
+  outline: none;
+  position: relative;
+  background-image: linear-gradient( 120deg, #0b8793, #360033, #0b8793);
+  background-size: 200%;
+  margin-bottom: 32px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: moveItems .9s forwards;
+}
+
+.loginSubmit:hover{
+  background-position: right;
+}
+
+.loginInputBorder{
+  height: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #cfcfcf;
+  transition: .3s ease-in-out;
+}
+
+.loginInputBorder::after{
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  margin-bottom: 16px;
+  background-image: linear-gradient(#0b8793, #360033);
+  transition: .3s ease-in-out;
+}
+
+.inputEmail:focus + .loginInputBorder::after{
+  width: 100%;
+}
+
+.inputPassword:focus + .loginInputBorder::after{
+  width: 100%;
+}
+
+
+@keyframes moveSubmit{
+  0%{
+      transform: translateY(-1.1rem);
+      
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0);
+      
+  }
+
+}
+
+@keyframes moveItems{
+  0%{
+      transform: translateX(-2rem);
+      
+  }
+  100%{
+      opacity: 1;
+      transform: translateX(0);
+      
+  }
+
+}
